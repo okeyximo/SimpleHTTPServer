@@ -1,3 +1,5 @@
+package tuesday;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -8,7 +10,7 @@ public abstract class HttpServer {
     public void routing() {
         try {
             ServerSocket server = new ServerSocket(9876);
-            System.out.println("Waiting for connection to http://localhost:9876");
+            System.out.println("Waiting for connection to Server running at http://localhost:9876");
             while (true) {
                 Socket client = server.accept();
                 BufferedReader input = new BufferedReader(
@@ -31,7 +33,7 @@ public abstract class HttpServer {
                 if (lines.get(0).equals("/home")) {
                     StringBuilder contentBuilder = new StringBuilder();
                     try {
-                        BufferedReader in = new BufferedReader(new FileReader("src/main/java/Index.html"));
+                        BufferedReader in = new BufferedReader(new FileReader("src/main/java/resources/index.html"));
                         String str;
                         while ((str = in.readLine()) != null) {
                             contentBuilder.append(str);
