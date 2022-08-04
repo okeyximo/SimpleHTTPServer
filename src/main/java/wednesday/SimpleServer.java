@@ -33,8 +33,8 @@ public class SimpleServer {
         System.out.println("Server running at http://localhost:8000");
         SimpleServer simpleServer = new SimpleServer();
         simpleServer.routing("/", "src/main/java/resources/index.html");
-        simpleServer.routing("/about", "src/main/resources/java/about.html");
-        simpleServer.routing("/contact", "src/main/resources/java/contactUs.html");
+        simpleServer.routing("/about", "src/main/java/resources/about.html");
+        simpleServer.routing("/contact", "src/main/java/resources/contactUs.html");
         simpleServer.setExecutor();
         simpleServer.startServer();
     }
